@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BOM/DOM을 알아보자</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/03.BOMDOM.css">
+	<script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<h1 class="title">자바스크립트를 이용하여</h1>
+	<button onclick="location.href = '//naver.com';">네이버(현재창으로)</button>
+	<button onclick="location.assign('//naver.com');">네이버(현재창으로)</button>
+	<button onclick="window.open('//naver.com');">네이버(새창으로)</button>
+	<button onclick="window.open('//naver.com', 'naver', 'width=300, height=300');">네이버(팝업으로)</button>
+	<button onclick="window.close();">현재창 닫기</button>
+	<button onclick="history.back();">이전페이지</button>
+	<button onclick="history.go(-1);">이전페이지(단계별)</button>
+	<button onclick="history.forward();">다음페이지</button>
+	<button onclick="history.go(1);">다음페이지(단계별)</button>
+	
+	<h1 class="title">HTML을 이용하여</h1>
+	<a href="//naver.com"><button>네이버(현재창으로)</button></a>
+	<a href="//naver.com" target="_blank"><button>네이버(새창으로)</button></a>
+
+	<h1 class="title">alert, confirm, prompt</h1>
+	<button onclick="alert('당신은 지금 ' + navigator.userAgent + '을 사용하고 있습니다.')">경고창(alert)</button>
+	<button onclick="confirm('당신은 지금 졸리나요?')">확인창(confirm)</button>
+	<button onclick="sulki('당신은 sulki함수를 실행했나요?');">확인창(confirm)</button>
+	<button onclick="promptAlert('당신이 좋아하는 과일을 입력하세요.');">입력창(prompt)</button>
+
+	<script src="../js/03.BOMDOM.js"></script>
+</body>
+</html>
