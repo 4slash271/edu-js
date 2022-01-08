@@ -1,0 +1,34 @@
+body {
+  text-align: center;
+}
+.wrapper {
+  width: 700px;
+  margin: auto;
+}
+input {
+  width: 100%;
+  padding: 0.75em 1em;
+  margin: 3em 0;
+  border: 1px solid #999;
+  display: block;
+}
+.btn-wrapper {
+  width: 100%;
+  margin: 3em 0;
+}
+button {
+  border: 1px solid #999;
+  padding: 0.75em 1em;
+  margin: 0 1.5em;
+}
+button:nth-child(1) {
+  background-color: #ccc;
+  border: none;
+}
+button:hover {
+  background-color: antiquewhite;
+}
+.text-wrapper {
+  border: 3px solid #ccc;
+  padding: 1em;
+}
