@@ -45,6 +45,7 @@ function onMake() {
     b = Math.floor(Math.random() * 256);
     bg = 'background-color: rgb(' + r + ', ' + g + ', ' + b + ')';
     stage.innerHTML += '<div class="box" style="' + bg + '"></div>';
+    // stage.innerHTML = '<div class="box" style="' + bg + '"></div>' + stage.innerHTML;
   }
 }
 
