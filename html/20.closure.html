@@ -1,0 +1,46 @@
+<script>
+  /* 
+	if(조건) {
+
+	}
+	조건이 	true가 되는 경우: 문자, 0이외의 숫자
+	조건이 false가 되는 경우: null, undefined, 0
+	*/
+  var arr = [3, 7, 1, 6, 4, 4, 9, 23, 9];
+  var users = [
+    { id: 1, name: '제이크', age: 15, gender: 'M' },
+    { id: 2, name: '제니', age: 25, gender: 'F' },
+    { id: 3, name: '준', age: 15, gender: 'M' },
+    { id: 4, name: '수지', age: 25, gender: 'F' },
+    { id: 5, name: '리하', age: 42, gender: 'F' },
+    { id: 6, name: '동하', age: 50, gender: 'M' },
+    { id: 7, name: '지원', age: 25, gender: 'F' },
+  ];
+  console.log(users[2].name);
+  console.log(users[2]['name']);
+
+  function ascend(key) {
+    return function (a, b) {
+      /* if(key) return a[key] - b[key]
+			else return a - b */
+      //삼항 연산자/key가 있다면 a의 key- b의 key 값: 아니면 a-b
+      return key ? a[key] - b[key] : a - b;
+    }; //오름차순
+  }
+
+  function descend(key) {
+    return function (a, b) {
+      /* if(key) return b[key] - a[key]
+			else return b - a */
+      return key ? b[key] - a[key] : b - a;
+    }; //내림차순
+  }
+
+  arr.sort(ascend());
+  console.log(arr);
+  arr.sort(descend());
+  console.log(arr);
+
+  users.sort(ascend('age'));
+  console.log(users);
+</script>
