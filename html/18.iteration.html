@@ -3,8 +3,8 @@
     { id: 1, name: 'Sulki Kim', age: 20, gender: 'f' },
     { id: 2, name: 'Minji Kim', age: 27, gender: 'f' },
     { id: 3, name: 'Jun Kim', age: 31, gender: 'm' },
-    { id: 5, name: 'Jason Park', age: 40, gender: 'm' },
-    { id: 6, name: 'Koo Min', age: 28, gender: 'm' },
+    { id: 4, name: 'Jason Park', age: 40, gender: 'm' },
+    { id: 5, name: 'Koo Min', age: 28, gender: 'm' },
   ];
 
   /**************** Iteration ******************/
@@ -13,13 +13,13 @@
   }
 
   users.forEach(function (v, i) {
-    console.log(i + 1 + '번째 데이터는', users[i].name + '의 것입니다.');
+    // console.log(i + 1 + '번째 데이터는', users[i].name + '의 것입니다.');
   });
 
   /**************** filtering ******************/
   var ageOver30 = [];
   for (var i = 0; i < users.length; i++) {
-    // console.log(users[i])
+    // console.log(users[i]);
     if (users[i].age >= 30) ageOver30.push(users[i]);
   }
   // 데이터를 순회(iteration)하면서
@@ -27,37 +27,52 @@
   var ageOver30 = users.filter(function (v, i) {
     return v.age >= 30;
   });
-  // console.log(ageOver30)
+  console.log(ageOver30);
 
   var arr = ['A', 'B', 'C'];
   arr.forEach(function (v, i) {
-    // console.log(v, i)
+    console.log(v, i);
   });
 
   /**************** mapping ******************/
   var users2 = users.map(function (v, i) {
-    return { name: v.name, age: v.age };
+    return v.age;
   });
-  // console.log(users2)
+  console.log(users2);
 
   /**************** 써먹어 보자 ******************/
-  /* var rankUsers = users
-  .sort(function(a, b) { return a.age - b.age })
-  .map(function(v, i) { v.rank = i + 1; return v  })
-  .sort(function(a, b) { return a.id - b.id })
-  console.log(rankUsers) */
+  //   var rankUsers = users
+  //     .sort(function (a, b) {
+  //       return a.age - b.age;
+  //     })
+  //     .map(function (v, i) {
+  //       v.rank = i + 1;
+  //       return v;
+  //     })
+  //     .sort(function (a, b) {
+  //       return a.id - b.id;
+  //     });
+  //   console.log(rankUsers);
+
+  /*   age 값 오름차순 정렬   */
   users.sort(function (a, b) {
     return a.age - b.age;
   }); // 오름차순 sort
+
+  /*  위의 배열에 랭크 부여 */
   users.forEach(function (v, i) {
     if (i == 0) v.rank = 1;
+    //위의 sort한 배열 안의 인덱스가 0일 경우 랭크 1
     else {
       if (users[i - 1].age === v.age) v.rank = users[i - 1].rank;
-      else v.rank = i + 1;
+      // 지금의 인덱스와 그 이전 인덱스의 age가 같으면 지금의 인덱스 랭크는 이전의 인덱스와 같음
+      else v.rank = i + 1; // 그것도 아니라면 랭크는 인덱스+1
     }
   });
+
+  /*  랭크 있는 상태로 원래의 순서대로 배열  */
   users.sort(function (a, b) {
-    return a.id - b.id;
+    return a.id - b.id; //id배열(1-5까지 원래의 순서) 오름차순으로 정렬
   });
   console.log(users);
 </script>
