@@ -1,0 +1,24 @@
+<script>
+  //return문
+  function sum(a, b) {
+    return a + b;
+  }
+
+  let c = sum(10, 20);
+  console.log(c);
+
+  function sum2(a, b, fn) {
+    fn(a + b);
+  }
+
+  sum2(20, 50, function (v) {
+    console.log(v);
+  });
+
+  //비동기
+  var count = 1;
+  setInterval(function () {
+    document.write('2.count= ' + count);
+  }, 3000);
+  document.write('hello');
+</script>
